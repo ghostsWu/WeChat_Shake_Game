@@ -1,0 +1,110 @@
+@wheeltime: 7s;
+
+.wheel_light_A_anima,
+.wheel_light_B_anima
+{
+    div
+    {
+        animation-name: wheel_light_A;
+        animation-duration: 1s;
+        animation-play-state: running;
+        animation-timing-function: steps(4);
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+}
+
+@keyframes wheel_light_A
+{
+    0%
+    {
+        transform: rotateZ(0deg);
+    }
+    100%
+    {
+        transform: rotateZ(-45deg);
+    }
+}
+
+.wheel_content_anima div
+{
+    transition: transform @wheeltime cubic-bezier(.31, .63, 0, 1.04) 0s ;
+}
+
+.winning_anima
+{
+    animation-name: boxshow;
+    animation-duration: .8s;
+    animation-delay: .1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
+    img
+    {
+        animation-name: winningimg;
+        animation-duration: 2s;
+        animation-delay: .5s;
+    }
+}
+
+@keyframes winningimg
+{
+    0%
+    {
+        box-shadow: 0 0 0 #f1136d;
+    }
+    30%
+    {
+        box-shadow: 0 0 34px #f1136d;
+    }
+    60%
+    {
+        box-shadow: 0 0 29px #f1136d;
+    }
+    100%
+    {
+        box-shadow: 0 0 0 #f1136d;
+    }
+}
+
+@keyframes boxshow
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+
+.text_inf{
+    animation-name: text_inf;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: .1s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+@keyframes text_inf{
+    0%      {opacity: 0;transform: translate(0px,0px);}
+    10%      {opacity: 1;transform: translate(0px,10px);}
+    90%      {opacity: 1;transform: translate(0px,10px);}
+    100%      {opacity: 0;transform: translate(0px,0px);}
+}
+
+.follow_QR,.Share_bg{
+    animation-name: boxshow;
+    animation-duration: .8s;
+    animation-delay: .1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
+}
+
